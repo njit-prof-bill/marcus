@@ -7789,6 +7789,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"clsx@npm:^2.1.1":
+  version: 2.1.1
+  resolution: "clsx@npm:2.1.1"
+  checksum: 10c0/c4c8eb865f8c82baab07e71bfa8897c73454881c4f99d6bc81585aecd7c441746c1399d08363dc096c550cceaf97bd4ce1e8854e1771e9998d9f94c4fe075839
+  languageName: node
+  linkType: hard
+
 "co@npm:^4.6.0":
   version: 4.6.0
   resolution: "co@npm:4.6.0"
@@ -15617,7 +15624,9 @@ __metadata:
   dependencies:
     "@redwoodjs/core": "npm:8.4.2"
     "@redwoodjs/project-config": "npm:8.4.2"
+    clsx: "npm:^2.1.1"
     prettier-plugin-tailwindcss: "npm:^0.5.12"
+    tailwind-variants: "npm:^0.3.0"
   languageName: unknown
   linkType: soft
 
@@ -16572,6 +16581,24 @@ __metadata:
     systeminformation: lib/cli.js
   checksum: 10c0/849283b2886c46ff5e79594e939c87202b5283b8aa16cd0d665c595781dba51913060728bae95b94837b78c3a515a0f00ab0a0471604990c5c778f555bd075ea
   conditions: (os=darwin | os=linux | os=win32 | os=freebsd | os=openbsd | os=netbsd | os=sunos | os=android)
+  languageName: node
+  linkType: hard
+
+"tailwind-merge@npm:^2.5.4":
+  version: 2.6.0
+  resolution: "tailwind-merge@npm:2.6.0"
+  checksum: 10c0/fc8a5535524de9f4dacf1c16ab298581c7bb757d68a95faaf28942b1c555a619bba9d4c6726fe83986e44973b315410c1a5226e5354c30ba82353bd6d2288fa5
+  languageName: node
+  linkType: hard
+
+"tailwind-variants@npm:^0.3.0":
+  version: 0.3.0
+  resolution: "tailwind-variants@npm:0.3.0"
+  dependencies:
+    tailwind-merge: "npm:^2.5.4"
+  peerDependencies:
+    tailwindcss: "*"
+  checksum: 10c0/115b0efb5ca5b76d4dfe6148e3f2f314f5af8490d0d2be8bdb6f062c0963ead87227ffd7340c6fb38cd95c0c751e2f65b04f3c0d833bf058d8cfe25210777bc7
   languageName: node
   linkType: hard
 
