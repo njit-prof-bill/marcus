@@ -26,4 +26,6 @@ And then a home page ...
 
 To make the Card compenent a Shadcn Card, I copy the source from Shadcn into the web/src/component/Card/Card.tsx.
 
-It turns out that I need a @/lib/utils folder with a `cn` function. To do that I need to create the web/src/utils folder. And then I added a `utils.ts` file in the folder. That file has the `cn` function.
+It turns out that I need a @/lib/utils folder with a `cn` function. To do that I need to create the web/src/utils folder. And then I added a `utils.ts` file in the folder. That file has the `cn` function. After some fiddling around with configuration I got the base app to work with a Shadcn dark theme.
+
+**Note.** To add a Shadcn component generate a redwood component with the same name, then paste the Shadcn code into the new source file.

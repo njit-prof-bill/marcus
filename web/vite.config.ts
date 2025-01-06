@@ -6,8 +6,9 @@ import { defineConfig } from 'vite'
 
 import redwood from '@redwoodjs/vite'
 
-// So that Vite will load on localhost instead of `127.0.0.1`.
 dns.setDefaultResultOrder('verbatim')
+
+console.log('Alias @ resolves to:', path.resolve(__dirname, './src'))
 
 const viteConfig: UserConfig = {
   plugins: [redwood()],
