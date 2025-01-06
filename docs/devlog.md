@@ -24,4 +24,6 @@ And then a home page ...
 
 ```yarn rw g page Home```
 
-To make the Card compenent a Shadcn Card, I copy the source from Shadcn into the web/src/component/Card/
+To make the Card compenent a Shadcn Card, I copy the source from Shadcn into the web/src/component/Card/Card.tsx.
+
+It turns out that I need a @/lib/utils folder with a `cn` function. To do that I need to create the web/src/utils folder. And then I added a `utils.ts` file in the folder. That file has the `cn` function.

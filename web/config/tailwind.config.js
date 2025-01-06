@@ -1,11 +1,15 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'class', // Enables dark mode
   content: [
-    './src/**/*.{js,jsx,ts,tsx}', // Include RedwoodJS source files
-    './web/src/**/*.{js,jsx,ts,tsx}',
+    './src/**/*.{js,jsx,ts,tsx}',
+    './web/src/**/*.{js,jsx,ts,tsx}', // Ensure Redwood's directories are included
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'dark-bg': '#1a202c',
+      },
+    },
   },
   plugins: [],
 }

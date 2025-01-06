@@ -1,13 +1,9 @@
-/**
- * START --- SETUP TAILWINDCSS EDIT
- *
- * `yarn rw setup ui tailwindcss` placed these directives here
- * to inject Tailwind's styles into your CSS.
- * For more information, see: https://tailwindcss.com/docs/installation
- */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/**
- * END --- SETUP TAILWINDCSS EDIT
- */
+
+/* Add dark mode styles */
+html {
+  background-color: #1a202c;
+  color: white;
+}
