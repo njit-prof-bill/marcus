@@ -15,3 +15,13 @@ Then I installed tailwind with the following command ...
 And installing variant to prep for Shadcn
 
 ```yarn add clsx tailwind-variants```
+
+Next I want to test Shadcn by adding in a component. This will mean creating a component, I will use a card component, and a homepage component. Starting with the card component ...
+
+```yarn rw g component Card```
+
+And then a home page ...
+
+```yarn rw g page Home```
+
+To make the Card compenent a Shadcn Card, I copy the source from Shadcn into the web/src/component/Card/
