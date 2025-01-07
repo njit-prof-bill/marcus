@@ -3,3 +3,10 @@ This project is a proto-type for a resume writing application. The application i
 - It uses past resumes or CVs to build a career history
 - It uses AI to write resume text
 - It creates a custom resume for specific job descriptions
+
+This proto-type will use a micro-services architecture based on the RedwoodJS api framework. The micro-services will be built around the primary features of the system. These features are:
+
+- User Management
+- Template Management
+- Resume Creation
+- Job History
