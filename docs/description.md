@@ -10,3 +10,13 @@ This proto-type will use a micro-services architecture based on the RedwoodJS ap
 - Template Management
 - Resume Creation
 - Job History
+
+## Platform APIs
+### User Management
+- authentication TBD
+- **getUserProfile** obtain an object of the user's settings
+- **createUserProfile** add a new object of user settings
+- **updateUserProfile** update the user settings
+### Template Management
+### Resume Creation
+### Job History
