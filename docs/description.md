@@ -12,6 +12,7 @@ This proto-type will use a micro-services architecture based on the RedwoodJS ap
 - Job History
 
 ## Platform APIs
+The following are the APIs that are the microservices of the platform. These are grouped according the primary feature areas.
 ### User Management
 - authentication TBD
 - **getUserProfile** obtain an object of the user's settings
