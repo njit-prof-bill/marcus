@@ -35,3 +35,5 @@ It turns out that I need a @/lib/utils folder with a `cn` function. To do that I
 I have created a **Firebase** project to use for authentication. I may also host the application there too, and might also use Firestore instead of Redwood's builtin SQL database.
 
 The Firebase project is **marcus**. The management portal is here: https://console.firebase.google.com/u/0/project/marcus-c6e57/overview
+
+My next step is to figure out how to incorporate Firebase authentication into my RedwoodJS project.
