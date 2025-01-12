@@ -37,3 +37,23 @@ I have created a **Firebase** project to use for authentication. I may also host
 The Firebase project is **marcus**. The management portal is here: https://console.firebase.google.com/u/0/project/marcus-c6e57/overview
 
 My next step is to figure out how to incorporate Firebase authentication into my RedwoodJS project.
+
+In Firebase, `marcus` is a project. For this prototype I added a web app to the project named marcus-web. The authentication settings are found in marcus-web.
+
+To add Firebase to the RedwoodJS project I started by updating the .env file and the redwood.toml. The values for this are found on the Firebase console in the settings for the marcus web app.
+
+### Integrating Firebase into the app
+
+I start by adding the Shadcn Button control to the app. This starts with this yarn command ...
+
+```bash
+yarn add @radix-ui/react-slot
+```
+
+Then I generated a RedwoodJS Button component ...
+
+```bash
+yarn rw g component Button
+```
+
+And then copying the Shadcn code over the Button.tsx file.
