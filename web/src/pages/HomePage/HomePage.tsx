@@ -1,3 +1,4 @@
+import { useAuth } from 'src/auth'
 import {
   Card,
   CardHeader,
@@ -8,6 +9,7 @@ import {
 } from 'src/components/Card/Card'
 
 const HomePage = () => {
+  const { isAuthenticated, signUp } = useAuth()
   return (
     <div className="flex min-h-screen items-center justify-center bg-gray-900">
       <Card>
@@ -18,6 +20,17 @@ const HomePage = () => {
         <CardContent>
           The Marcus project is a prototype application to generate a custom
           resume for a specific job description.
+          <p>{JSON.stringify({ isAuthenticated })}</p>
+          <button
+            onClick={() =>
+              signUp({
+                // email: 'your.email@email.com',
+                // password: 'super secret password',
+              })
+            }
+          >
+            sign up
+          </button>
         </CardContent>
         <CardFooter />
       </Card>
