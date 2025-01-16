@@ -1,4 +1,5 @@
 import { useAuth } from 'src/auth'
+import { Button } from 'src/components/Button/Button'
 import {
   Card,
   CardHeader,
@@ -21,7 +22,7 @@ const HomePage = () => {
           The Marcus project is a prototype application to generate a custom
           resume for a specific job description.
           <p>{JSON.stringify({ isAuthenticated })}</p>
-          <button
+          <Button
             onClick={() =>
               signUp({
                 // email: 'your.email@email.com',
@@ -30,7 +31,7 @@ const HomePage = () => {
             }
           >
             sign up
-          </button>
+          </Button>
         </CardContent>
         <CardFooter />
       </Card>
