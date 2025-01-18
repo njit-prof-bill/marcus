@@ -22,7 +22,7 @@ const HomePage = () => {
           The Marcus project is a prototype application to generate a custom
           resume for a specific job description.
           <p>{JSON.stringify({ isAuthenticated })}</p>
-          <Button
+          <button
             onClick={() =>
               signUp({
                 // email: 'your.email@email.com',
@@ -31,7 +31,7 @@ const HomePage = () => {
             }
           >
             sign up
-          </Button>
+          </button>
         </CardContent>
         <CardFooter />
       </Card>
