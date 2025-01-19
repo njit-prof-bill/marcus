@@ -36,3 +36,5 @@ Latex will have to be configured to run in a Docker container. Latex will run as
 The text for the resume will be generated separately. Joe suggested that each section of the resume be generated separately, then put together by Latex. If this is the case, then the resume template shall have specific required sections. In this way, the AI generated text will map to sections in the template.
 
 The API will receive the text, probably in a list object where each item is a section on the resume. The API will also receive the name of the template. With these things, Latex is called and a PDF is generated. The PDF is returned to the caller.
+
+I need to determine what the sections that we will support are.
