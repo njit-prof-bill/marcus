@@ -25,8 +25,8 @@ const HomePage = () => {
           <Button
             onClick={() =>
               signUp({
-                // email: 'your.email@email.com',
-                // password: 'super secret password',
+                email: 'your.email@example.com',
+                password: 'supersecretpassword',
               })
             }
           >
