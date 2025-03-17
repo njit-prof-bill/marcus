@@ -6,6 +6,6 @@
     "@redwoodjs/api": "8.4.4",
     "@redwoodjs/auth-firebase-api": "8.4.4",
     "@redwoodjs/graphql-server": "8.4.4",
-    "firebase-admin": "12.1.1"
+    "firebase-admin": "12.6.0"
   }
 }
