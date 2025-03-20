@@ -36,61 +36,73 @@ const HomePage = () => {
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-gray-900">
-      <Card>
+      <Card className="w-full max-w-md p-6">
         <CardHeader>
           <CardTitle>Marcus</CardTitle>
           <CardDescription>Resume writer</CardDescription>
         </CardHeader>
         <CardContent>
-          The Marcus project is a prototype application to generate a custom
-          resume for a specific job description.
-          <p>{JSON.stringify({ isAuthenticated })}</p>
+          <p className="mb-4 text-gray-400">
+            The Marcus project is a prototype application to generate a custom
+            resume for a specific job description.
+          </p>
+          <p className="mb-4 text-gray-400">
+            {JSON.stringify({ isAuthenticated })}
+          </p>
           {isAuthenticated ? (
-            <Button onClick={logOut}>Sign Out</Button>
+            <Button onClick={logOut} className="w-full">
+              Sign Out
+            </Button>
           ) : (
             <>
-              {isSignUp ? (
-                <>
-                  <input
-                    type="email"
-                    placeholder="Email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                  />
-                  <input
-                    type="password"
-                    placeholder="Password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                  />
-                  <Button onClick={handleSignUp}>Sign Up</Button>
-                  <p>
-                    Already have an account?{' '}
-                    <Button onClick={() => setIsSignUp(false)}>Log In</Button>
-                  </p>
-                </>
-              ) : (
-                <>
-                  <input
-                    type="email"
-                    placeholder="Email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                  />
-                  <input
-                    type="password"
-                    placeholder="Password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                  />
-                  <Button onClick={handleLogIn}>Log In</Button>
-                  <p>
-                    Need an account?{' '}
-                    <Button onClick={() => setIsSignUp(true)}>Sign Up</Button>
-                  </p>
-                </>
-              )}
-              {error && <p className="text-red-500">{error}</p>}
+              <div className="space-y-4">
+                <input
+                  type="email"
+                  placeholder="Email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="w-full rounded border border-gray-700 bg-gray-800 p-2 text-white"
+                />
+                <input
+                  type="password"
+                  placeholder="Password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="w-full rounded border border-gray-700 bg-gray-800 p-2 text-white"
+                />
+                {isSignUp ? (
+                  <>
+                    <Button onClick={handleSignUp} className="w-full">
+                      Sign Up
+                    </Button>
+                    <p className="text-center text-gray-400">
+                      Already have an account?{' '}
+                      <button
+                        onClick={() => setIsSignUp(false)}
+                        className="text-blue-500 hover:underline"
+                      >
+                        Log In
+                      </button>
+                    </p>
+                  </>
+                ) : (
+                  <>
+                    <Button onClick={handleLogIn} className="w-full">
+                      Log In
+                    </Button>
+                    <p className="text-center text-gray-400">
+                      Need an account?{' '}
+                      <button
+                        onClick={() => setIsSignUp(true)}
+                        className="text-blue-500 hover:underline"
+                      >
+                        Sign Up
+                      </button>
+                    </p>
+                  </>
+                )}
+                {error && <p className="text-red-500">{error}</p>}
+              </div>
             </>
           )}
         </CardContent>
