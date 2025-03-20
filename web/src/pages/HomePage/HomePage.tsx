@@ -11,6 +11,15 @@ import {
   CardContent,
 } from 'src/components/Card/Card'
 
+const errorMessages = {
+  'auth/invalid-credential': 'Invalid credentials. Please try again.',
+  'auth/user-not-found': 'No user found with this email.',
+  'auth/wrong-password': 'Incorrect password. Please try again.',
+  'auth/email-already-in-use': 'This email is already in use.',
+  'auth/weak-password': 'Password should be at least 6 characters.',
+  // Add more error codes and messages as needed
+}
+
 const HomePage = () => {
   const { isAuthenticated, signUp, logIn, logOut } = useAuth()
   const [isSignUp, setIsSignUp] = useState(false)
@@ -21,17 +30,28 @@ const HomePage = () => {
   const handleSignUp = async () => {
     try {
       await signUp({ email, password })
+      setError('') // Clear error message after successful sign-up
     } catch (error) {
-      setError(error.message)
+      setError(
+        errorMessages[error.code] || 'An error occurred. Please try again.'
+      )
     }
   }
 
   const handleLogIn = async () => {
     try {
       await logIn({ email, password })
+      setError('') // Clear error message after successful log-in
     } catch (error) {
-      setError(error.message)
+      setError(
+        errorMessages[error.code] || 'An error occurred. Please try again.'
+      )
     }
+  }
+
+  const handleSwitchForm = () => {
+    setIsSignUp(!isSignUp)
+    setError('') // Clear error message when switching forms
   }
 
   return (
@@ -46,13 +66,15 @@ const HomePage = () => {
             The Marcus project is a prototype application to generate a custom
             resume for a specific job description.
           </p>
-          <p className="mb-4 text-gray-400">
-            {JSON.stringify({ isAuthenticated })}
-          </p>
           {isAuthenticated ? (
-            <Button onClick={logOut} className="w-full">
-              Sign Out
-            </Button>
+            <div className="flex justify-end">
+              <Button
+                onClick={logOut}
+                className="w-32 border border-gray-700 bg-gray-800 text-white"
+              >
+                Sign Out
+              </Button>
+            </div>
           ) : (
             <>
               <div className="space-y-4">
@@ -72,16 +94,18 @@ const HomePage = () => {
                 />
                 {isSignUp ? (
                   <>
-                    <Button
-                      onClick={handleSignUp}
-                      className="w-full border border-gray-700 bg-gray-800 text-white"
-                    >
-                      Sign Up
-                    </Button>
+                    <div className="flex justify-end">
+                      <Button
+                        onClick={handleSignUp}
+                        className="w-32 border border-gray-700 bg-gray-800 text-white"
+                      >
+                        Sign Up
+                      </Button>
+                    </div>
                     <p className="text-center text-gray-400">
                       Already have an account?{' '}
                       <button
-                        onClick={() => setIsSignUp(false)}
+                        onClick={handleSwitchForm}
                         className="text-blue-500 hover:underline"
                       >
                         Log In
@@ -93,7 +117,7 @@ const HomePage = () => {
                     <div className="flex justify-end">
                       <Button
                         onClick={handleLogIn}
-                        className="border border-gray-700 bg-gray-800 text-white"
+                        className="w-32 border border-gray-700 bg-gray-800 text-white"
                       >
                         Log In
                       </Button>
@@ -101,7 +125,7 @@ const HomePage = () => {
                     <p className="text-center text-gray-400">
                       Need an account?{' '}
                       <button
-                        onClick={() => setIsSignUp(true)}
+                        onClick={handleSwitchForm}
                         className="text-blue-500 hover:underline"
                       >
                         Sign Up
