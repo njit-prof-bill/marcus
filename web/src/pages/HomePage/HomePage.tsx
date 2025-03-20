@@ -72,7 +72,10 @@ const HomePage = () => {
                 />
                 {isSignUp ? (
                   <>
-                    <Button onClick={handleSignUp} className="w-full">
+                    <Button
+                      onClick={handleSignUp}
+                      className="w-full border border-gray-700 bg-gray-800 text-white"
+                    >
                       Sign Up
                     </Button>
                     <p className="text-center text-gray-400">
@@ -87,9 +90,14 @@ const HomePage = () => {
                   </>
                 ) : (
                   <>
-                    <Button onClick={handleLogIn} className="w-full">
-                      Log In
-                    </Button>
+                    <div className="flex justify-end">
+                      <Button
+                        onClick={handleLogIn}
+                        className="border border-gray-700 bg-gray-800 text-white"
+                      >
+                        Log In
+                      </Button>
+                    </div>
                     <p className="text-center text-gray-400">
                       Need an account?{' '}
                       <button
