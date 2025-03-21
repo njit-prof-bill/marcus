@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
+
 import { navigate, routes } from '@redwoodjs/router'
+
 import { useAuth } from 'src/auth'
 import { Button } from 'src/components/Button/Button'
 import {
@@ -17,6 +19,8 @@ const errorMessages = {
   'auth/wrong-password': 'Incorrect password. Please try again.',
   'auth/email-already-in-use': 'This email is already in use.',
   'auth/weak-password': 'Password should be at least 6 characters.',
+  'An error occurred. Please try again.':
+    'Check your email and password and try again.',
   // Add more error codes and messages as needed
 }
 
@@ -38,7 +42,9 @@ const LandingPage = () => {
       await signUp({ email, password })
       setError('') // Clear error message after successful sign-up
     } catch (error) {
-      setError(errorMessages[error.code] || 'An error occurred. Please try again.')
+      setError(
+        errorMessages[error.code] || 'An error occurred. Please try again.'
+      )
     }
   }
 
@@ -47,7 +53,9 @@ const LandingPage = () => {
       await logIn({ email, password })
       setError('') // Clear error message after successful log-in
     } catch (error) {
-      setError(errorMessages[error.code] || 'An error occurred. Please try again.')
+      setError(
+        errorMessages[error.code] || 'An error occurred. Please try again.'
+      )
     }
   }
 
