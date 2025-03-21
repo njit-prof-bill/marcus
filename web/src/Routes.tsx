@@ -1,20 +1,17 @@
-// In this file, all Page components from 'src/pages' are auto-imported. Nested
-// directories are supported, and should be uppercase. Each subdirectory will be
-// prepended onto the component name.
-//
-// Examples:
-//
-// 'src/pages/HomePage/HomePage.js'         -> HomePage
-// 'src/pages/Admin/BooksPage/BooksPage.js' -> AdminBooksPage
+import { Router, Route, Private } from '@redwoodjs/router'
 
-import { Router, Route } from '@redwoodjs/router'
+import HomePage from 'src/pages/HomePage/HomePage'
+import LandingPage from 'src/pages/LandingPage/LandingPage'
 
 import { useAuth } from './auth'
 
 const Routes = () => {
   return (
     <Router useAuth={useAuth}>
-      <Route path="/" page={HomePage} name="home" />
+      <Route path="/" page={LandingPage} name="landing" />
+      <Private unauthenticated="landing">
+        <Route path="/home" page={HomePage} name="home" />
+      </Private>
       <Route notfound page={NotFoundPage} />
     </Router>
   )

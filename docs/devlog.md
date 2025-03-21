@@ -16,7 +16,7 @@ And installing variant to prep for Shadcn
 
 ```yarn add clsx tailwind-variants```
 
-Next I want to test Shadcn by adding in a component. This will mean creating a component, I will use a card component, and a homepage component. Starting with the card component ...
+Next I want to test Shadcn by adding in a component. This will mean creating a component, I will use a card component, and a landingpage component. Starting with the card component ...
 
 ```yarn rw g component Card```
 
