@@ -14,13 +14,14 @@ import {
 } from 'src/components/Card/Card'
 
 const errorMessages = {
-  'auth/invalid-credential': 'Invalid credentials. Please try again.',
+  'auth/invalid-credential': 'Email and Password do not match our records.',
   'auth/user-not-found': 'No user found with this email.',
-  'auth/wrong-password': 'Incorrect password. Please try again.',
+  'auth/wrong-password': 'Email and Password do not match our records.',
   'auth/email-already-in-use': 'This email is already in use.',
   'auth/weak-password': 'Password should be at least 6 characters.',
   'An error occurred. Please try again.':
     'Check your email and password and try again.',
+  yarn,
   // Add more error codes and messages as needed
 }
 
