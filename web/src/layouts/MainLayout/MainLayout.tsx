@@ -1,5 +1,7 @@
 import { useState } from 'react'
 
+import { Bars3Icon } from '@heroicons/react/24/outline' // Import the Heroicons hamburger menu icon
+
 import { Link, routes } from '@redwoodjs/router'
 
 import { useAuth } from 'src/auth'
@@ -24,9 +26,7 @@ const MainLayout = ({ children }) => {
             className="mr-4 flex h-8 w-8 items-center justify-center rounded bg-gray-800 hover:bg-gray-700"
             aria-label="Toggle Side Panel"
           >
-            <span className="mb-1 block h-0.5 w-5 bg-white"></span>
-            <span className="mb-1 block h-0.5 w-5 bg-white"></span>
-            <span className="block h-0.5 w-5 bg-white"></span>
+            <Bars3Icon className="h-6 w-6 text-white" />
           </button>
           <h1 className="text-xl">Marcus</h1>
         </div>
