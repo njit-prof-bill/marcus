@@ -21,7 +21,6 @@ const errorMessages = {
   'auth/weak-password': 'Password should be at least 6 characters.',
   'An error occurred. Please try again.':
     'Check your email and password and try again.',
-  yarn,
   // Add more error codes and messages as needed
 }
 
