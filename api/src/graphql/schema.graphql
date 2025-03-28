@@ -1,0 +1,11 @@
+type FileUploadResponse {
+  success: Boolean!
+  message: String
+  fileId: String
+}
+
+scalar Upload
+
+type Mutation {
+  uploadFile(file: Upload!): FileUploadResponse! @requireAuth
+}
