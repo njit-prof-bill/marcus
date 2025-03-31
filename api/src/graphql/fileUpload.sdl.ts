@@ -12,7 +12,7 @@ export const schema = gql`
   scalar Upload
 
   type Mutation {
-    uploadFile(file: Upload!): FileUploadResponse!
+    uploadFile(file: Upload!): FileUploadResponse! @requireAuth
   }
 `
 
