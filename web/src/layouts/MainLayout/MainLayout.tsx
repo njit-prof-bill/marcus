@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import { Bars3Icon } from '@heroicons/react/24/outline' // Import the Heroicons hamburger menu icon
+import { Bars3Icon } from '@heroicons/react/24/outline'
 
 import { Link, routes } from '@redwoodjs/router'
 
@@ -20,7 +20,6 @@ const MainLayout = ({ children }) => {
       {/* Banner */}
       <header className="flex items-center justify-between bg-black p-4">
         <div className="flex items-center">
-          {/* Hamburger Menu */}
           <button
             onClick={toggleSidePanel}
             className="mr-4 flex h-8 w-8 items-center justify-center rounded bg-gray-800 hover:bg-gray-700"
@@ -56,7 +55,14 @@ const MainLayout = ({ children }) => {
                   Home
                 </Link>
               </li>
-              {/* Add more navigation links here */}
+              <li>
+                <Link
+                  to={routes.fileUpload()}
+                  className="block px-4 py-2 hover:bg-gray-700"
+                >
+                  Resume Upload
+                </Link>
+              </li>
             </ul>
           </nav>
         </aside>

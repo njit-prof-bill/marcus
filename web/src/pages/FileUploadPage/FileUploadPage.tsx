@@ -1,13 +1,13 @@
 import MainLayout from 'src/layouts/MainLayout/MainLayout'
 
-const HomePage = () => {
+const FileUploadPage = () => {
   return (
     <MainLayout>
       <div className="flex h-full items-center justify-center">
-        <h2 className="text-2xl">Home Page</h2>
+        <h2 className="text-2xl">File Upload</h2>
       </div>
     </MainLayout>
   )
 }
 
-export default HomePage
+export default FileUploadPage
