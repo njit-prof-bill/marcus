@@ -8,10 +8,10 @@ import { useAuth } from './auth'
 const Routes = () => {
   return (
     <Router useAuth={useAuth}>
-      <Route path="/file-upload" page={FileUploadPage} name="fileUpload" />
       <Route path="/" page={LandingPage} name="landing" />
       <Private unauthenticated="landing">
         <Route path="/home" page={HomePage} name="home" />
+        <Route path="/file-upload" page={FileUploadPage} name="fileUpload" />
       </Private>
       <Route notfound page={NotFoundPage} />
     </Router>

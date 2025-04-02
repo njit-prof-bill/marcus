@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 import { Bars3Icon } from '@heroicons/react/24/outline'
 
-import { Link, routes } from '@redwoodjs/router'
+import { Link, routes, navigate } from '@redwoodjs/router'
 
 import { useAuth } from 'src/auth'
 import { Button } from 'src/components/Button/Button'
@@ -13,6 +13,11 @@ const MainLayout = ({ children }) => {
 
   const toggleSidePanel = () => {
     setIsSidePanelOpen(!isSidePanelOpen)
+  }
+
+  const handleLogout = async () => {
+    await logOut()
+    navigate(routes.landing()) // Redirect to the LandingPage after logout
   }
 
   return (
@@ -30,7 +35,7 @@ const MainLayout = ({ children }) => {
           <h1 className="text-xl">Marcus</h1>
         </div>
         <Button
-          onClick={logOut}
+          onClick={handleLogout}
           className="border border-gray-700 bg-gray-800 text-white"
         >
           Log Out
