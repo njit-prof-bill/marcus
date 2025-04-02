@@ -1,6 +1,16 @@
-import { gql } from '@redwoodjs/graphql-server'
+import gql from 'graphql-tag' // Explicitly import gql from graphql-tag
 
 import { uploadFile } from 'src/services/fileUpload/fileUpload'
+
+// Define the FileUploadArgs interface for type safety
+interface FileUploadArgs {
+  file: Promise<{
+    filename: string
+    mimetype: string
+    encoding: string
+    createReadStream: () => NodeJS.ReadableStream
+  }>
+}
 
 export const schema = gql`
   type FileUploadResponse {
@@ -18,7 +28,6 @@ export const schema = gql`
 
 export const resolvers = {
   Mutation: {
-    uploadFile: (_root: unknown, args: { file: Promise<File> }) =>
-      uploadFile(args),
+    uploadFile: (_root: unknown, args: FileUploadArgs) => uploadFile(args),
   },
 }
