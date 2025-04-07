@@ -28,7 +28,6 @@ export const getCurrentUser = async (decoded, { token }) => {
 
   try {
     const user = await admin.auth().verifyIdToken(token)
-    console.log('Verified user:', user)
 
     // Simplify the user object
     const simplifiedUser = {
@@ -38,7 +37,6 @@ export const getCurrentUser = async (decoded, { token }) => {
       picture: user.picture,
     }
 
-    console.log('Simplified user:', simplifiedUser)
     return simplifiedUser
   } catch (error) {
     console.error('Error verifying Firebase token:', error)
@@ -52,7 +50,6 @@ export const getCurrentUser = async (decoded, { token }) => {
  * @returns {boolean} - If the currentUser is authenticated
  */
 export const isAuthenticated = (): boolean => {
-  console.log('isAuthenticated called. context.currentUser:', context.currentUser)
   return !!context.currentUser
 }
 
@@ -67,11 +64,9 @@ export const isAuthenticated = (): boolean => {
  * @see https://github.com/redwoodjs/redwood/tree/main/packages/auth for examples
  */
 export const requireAuth = () => {
-  console.log('requireAuth called. context.currentUser:', context.currentUser)
   if (!isAuthenticated()) {
     throw new AuthenticationError("You don't have permission to do that.")
   }
-}
 
   // Custom RBAC implementation required for firebase
   // https://firebase.google.com/docs/auth/admin/custom-claims
