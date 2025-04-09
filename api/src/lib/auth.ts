@@ -24,8 +24,6 @@ const adminApp = admin.initializeApp({
  * @see https://github.com/redwoodjs/redwood/tree/main/packages/auth for examples
  */
 export const getCurrentUser = async (decoded, { token }) => {
-  console.log('getCurrentUser called with token:', token)
-
   try {
     const user = await admin.auth().verifyIdToken(token)
 
